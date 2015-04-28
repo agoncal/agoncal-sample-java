@@ -12,6 +12,7 @@
 
     <modules>
         <module>jmh</module>
+        <module>equalshashcode</module>
     </modules>
 
 </project>
