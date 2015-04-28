@@ -1,7 +1,7 @@
-package org.agoncal.sample.equalshashcode.without.list;
+package org.agoncal.sample.equalshashcode.with.list;
 
-import org.agoncal.sample.equalshashcode.without.Customer;
-import org.agoncal.sample.equalshashcode.without.OrderLine;
+import org.agoncal.sample.equalshashcode.with.Customer;
+import org.agoncal.sample.equalshashcode.with.OrderLine;
 import org.joda.time.LocalDate;
 
 import java.util.ArrayList;

@@ -1,9 +1,9 @@
-package org.agoncal.sample.equalshashcode.without.set;
+package org.agoncal.sample.equalshashcode.with.set;
 
-import org.agoncal.sample.equalshashcode.without.Genre;
-import org.agoncal.sample.equalshashcode.without.Item;
-import org.agoncal.sample.equalshashcode.without.MajorLabel;
-import org.agoncal.sample.equalshashcode.without.Musician;
+import org.agoncal.sample.equalshashcode.with.Genre;
+import org.agoncal.sample.equalshashcode.with.Item;
+import org.agoncal.sample.equalshashcode.with.MajorLabel;
+import org.agoncal.sample.equalshashcode.with.Musician;
 
 import java.util.HashSet;
 import java.util.Set;

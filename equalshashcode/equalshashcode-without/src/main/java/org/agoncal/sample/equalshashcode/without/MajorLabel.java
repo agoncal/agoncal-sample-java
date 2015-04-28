@@ -1,6 +1,7 @@
 package org.agoncal.sample.equalshashcode.without;
 
 public class MajorLabel {
+
     // ======================================
     // =             Attributes             =
     // ======================================

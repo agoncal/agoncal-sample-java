@@ -1,6 +1,6 @@
-package org.agoncal.sample.equalshashcode.without;
+package org.agoncal.sample.equalshashcode.with;
 
-public class Publisher {
+public class Genre {
 
     // ======================================
     // =             Attributes             =
@@ -13,14 +13,14 @@ public class Publisher {
     // =            Constructors            =
     // ======================================
 
-    public Publisher() {
+    public Genre() {
     }
 
-    public Publisher(String name) {
+    public Genre(String name) {
         this.name = name;
     }
 
-    // ======================================
+// ======================================
     // =         Getters & setters          =
     // ======================================
 

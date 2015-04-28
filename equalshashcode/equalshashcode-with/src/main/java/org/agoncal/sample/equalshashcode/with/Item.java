@@ -1,4 +1,4 @@
-package org.agoncal.sample.equalshashcode.without;
+package org.agoncal.sample.equalshashcode.with;
 
 public abstract class Item {
 

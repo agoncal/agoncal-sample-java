@@ -1,11 +1,13 @@
-package org.agoncal.sample.equalshashcode.without.list;
+package org.agoncal.sample.equalshashcode.with.set;
 
-import org.agoncal.sample.equalshashcode.without.Customer;
-import org.agoncal.sample.equalshashcode.without.OrderLine;
+import org.agoncal.sample.equalshashcode.with.Customer;
+import org.agoncal.sample.equalshashcode.with.OrderLine;
 import org.joda.time.LocalDate;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class PurchaseOrder {
 
@@ -18,7 +20,7 @@ public class PurchaseOrder {
     private transient Integer quantity;
     private LocalDate orderDate;
     private Customer customer;
-    private List<OrderLine> orderLines;
+    private Set<OrderLine> orderLines;
 
     // ======================================
     // =            Constructors            =
@@ -39,7 +41,7 @@ public class PurchaseOrder {
 
     public void addOrderLine(OrderLine orderLine) {
         if (orderLines == null) {
-            orderLines = new ArrayList<>();
+            orderLines = new HashSet<>();
         }
         orderLines.add(orderLine);
     }
@@ -96,11 +98,11 @@ public class PurchaseOrder {
         this.customer = customer;
     }
 
-    public List<OrderLine> getOrderLines() {
+    public Set<OrderLine> getOrderLines() {
         return orderLines;
     }
 
-    public void setOrderLines(List<OrderLine> orderLines) {
+    public void setOrderLines(Set<OrderLine> orderLines) {
         this.orderLines = orderLines;
     }
 }

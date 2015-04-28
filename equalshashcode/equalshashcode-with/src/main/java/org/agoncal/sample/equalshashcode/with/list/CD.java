@@ -1,12 +1,12 @@
-package org.agoncal.sample.equalshashcode.without.set;
+package org.agoncal.sample.equalshashcode.with.list;
 
-import org.agoncal.sample.equalshashcode.without.Genre;
-import org.agoncal.sample.equalshashcode.without.Item;
-import org.agoncal.sample.equalshashcode.without.MajorLabel;
-import org.agoncal.sample.equalshashcode.without.Musician;
+import org.agoncal.sample.equalshashcode.with.Genre;
+import org.agoncal.sample.equalshashcode.with.Item;
+import org.agoncal.sample.equalshashcode.with.MajorLabel;
+import org.agoncal.sample.equalshashcode.with.Musician;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CD extends Item {
 
@@ -17,7 +17,7 @@ public class CD extends Item {
     private Float totalDuration;
     private MajorLabel label;
     private Genre genre;
-    private Set<Musician> musicians;
+    private List<Musician> musicians;
 
     // ======================================
     // =            Constructors            =
@@ -41,7 +41,7 @@ public class CD extends Item {
 
     public void addMusician(Musician musician) {
         if (musicians == null) {
-            musicians = new HashSet<>();
+            musicians = new ArrayList<>();
         }
         musicians.add(musician);
     }
@@ -74,11 +74,11 @@ public class CD extends Item {
         this.genre = genre;
     }
 
-    public Set<Musician> getMusicians() {
+    public List<Musician> getMusicians() {
         return musicians;
     }
 
-    public void setMusicians(Set<Musician> musicians) {
+    public void setMusicians(List<Musician> musicians) {
         this.musicians = musicians;
     }
 }

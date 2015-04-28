@@ -1,6 +1,6 @@
-package org.agoncal.sample.equalshashcode.without.map;
+package org.agoncal.sample.equalshashcode.with.map;
 
-import org.agoncal.sample.equalshashcode.without.Item;
+import org.agoncal.sample.equalshashcode.with.Item;
 
 import java.util.HashMap;
 import java.util.Map;

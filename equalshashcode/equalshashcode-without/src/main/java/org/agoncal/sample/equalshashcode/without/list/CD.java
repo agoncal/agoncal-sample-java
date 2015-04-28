@@ -7,9 +7,9 @@ import org.agoncal.sample.equalshashcode.without.Musician;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class CD extends Item {
+
     // ======================================
     // =             Attributes             =
     // ======================================

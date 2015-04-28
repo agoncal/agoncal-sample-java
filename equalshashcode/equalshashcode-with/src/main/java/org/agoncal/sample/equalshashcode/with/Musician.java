@@ -1,4 +1,4 @@
-package org.agoncal.sample.equalshashcode.without;
+package org.agoncal.sample.equalshashcode.with;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.joda.time.LocalDate;
