@@ -7,6 +7,7 @@ public abstract class Item {
     // ======================================
 
     protected Long id;
+    protected String isbn;
     protected String title;
     protected Float price;
     protected String description;
@@ -25,6 +26,14 @@ public abstract class Item {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     public String getTitle() {

@@ -1,5 +1,7 @@
 package org.agoncal.sample.equalshashcode.with;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.joda.time.LocalDate;
 
 public class Customer extends Person {
@@ -54,5 +56,31 @@ public class Customer extends Person {
 
     public void setHomeAddress(Address homeAddress) {
         this.homeAddress = homeAddress;
+    }
+
+    // ======================================
+    // =   Methods hash, equals, toString   =
+    // ======================================
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (!(o instanceof Customer)) {
+            return false;
+        }
+
+        Customer customer = (Customer) o;
+
+        return new EqualsBuilder()
+                .append(email, customer.email)
+                .isEquals();
+    }
+
+    @Override
+    public final int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(email)
+                .toHashCode();
     }
 }

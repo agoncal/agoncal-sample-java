@@ -46,19 +46,4 @@ public class Musician extends Person {
     public void setPreferredInstrument(String preferredInstrument) {
         this.preferredInstrument = preferredInstrument;
     }
-
-    // ======================================
-    // =   Methods hash, equals, toString   =
-    // ======================================
-
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this)
-                .append("firstName", firstName)
-                .append("lastName", lastName)
-                .append("dateOfBirth", dateOfBirth)
-                .append("bio", bio)
-                .append("preferredInstrument", preferredInstrument)
-                .toString();
-    }
 }

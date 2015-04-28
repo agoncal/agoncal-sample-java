@@ -1,5 +1,8 @@
 package org.agoncal.sample.equalshashcode.with;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 public class Address {
 
     // ======================================
@@ -88,5 +91,39 @@ public class Address {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    // ======================================
+    // =   Methods hash, equals, toString   =
+    // ======================================
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (!(o instanceof Address)) {
+            return false;
+        }
+
+        Address address = (Address) o;
+
+        return new EqualsBuilder()
+                .append(street1, address.street1)
+                .append(city, address.city)
+                .append(state, address.state)
+                .append(zipcode, address.zipcode)
+                .append(country, address.country)
+                .isEquals();
+    }
+
+    @Override
+    public final int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(street1)
+                .append(city)
+                .append(state)
+                .append(zipcode)
+                .append(country)
+                .toHashCode();
     }
 }

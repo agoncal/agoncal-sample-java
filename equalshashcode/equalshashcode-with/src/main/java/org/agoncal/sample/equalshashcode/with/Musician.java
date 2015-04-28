@@ -1,6 +1,7 @@
 package org.agoncal.sample.equalshashcode.with;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.joda.time.LocalDate;
 
 public class Musician extends Person {
@@ -52,13 +53,32 @@ public class Musician extends Person {
     // ======================================
 
     @Override
-    public String toString() {
-        return new ToStringBuilder(this)
-                .append("firstName", firstName)
-                .append("lastName", lastName)
-                .append("dateOfBirth", dateOfBirth)
-                .append("bio", bio)
-                .append("preferredInstrument", preferredInstrument)
-                .toString();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (!(o instanceof Musician)) {
+            return false;
+        }
+
+        Musician musician = (Musician) o;
+
+        return new EqualsBuilder()
+                .appendSuper(super.equals(o))
+                .append(firstName, musician.firstName)
+                .append(lastName, musician.lastName)
+                .append(dateOfBirth, musician.dateOfBirth)
+                .append(preferredInstrument, musician.preferredInstrument)
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .appendSuper(super.hashCode())
+                .append(firstName)
+                .append(lastName)
+                .append(dateOfBirth)
+                .append(preferredInstrument)
+                .toHashCode();
     }
 }

@@ -16,8 +16,8 @@ public class PurchaseOrderTest {
     @Test
     public void shouldAddDifferentOrderLines() {
         PurchaseOrder purchaseOrder = new PurchaseOrder(random.nextLong(), new LocalDate(2015, 1, 1), new Customer(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getPhone(), Lorem.getWords(1), new Address(Lorem.getWords(3), Lorem.getWords(2), Lorem.getWords(2), Lorem.getStateAbbr(), Lorem.getZipCode(), Lorem.getWords(1))));
-        OrderLine orderLine1 = new OrderLine(random.nextInt(), new CD(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock")));
-        OrderLine orderLine2 = new OrderLine(random.nextInt(), new CD(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock")));
+        OrderLine orderLine1 = new OrderLine(random.nextInt(), new CD(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock")));
+        OrderLine orderLine2 = new OrderLine(random.nextInt(), new CD(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock")));
 
         // Add one order line
         purchaseOrder.addOrderLine(orderLine1);
@@ -36,7 +36,7 @@ public class PurchaseOrderTest {
     @Test
     public void shouldAddTheSameOrderLineSeveralTimes() {
         PurchaseOrder purchaseOrder = new PurchaseOrder(random.nextLong(), new LocalDate(2015, 1, 1), new Customer(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971,5,29), Lorem.getPhone(), Lorem.getWords(1), new Address(Lorem.getWords(3), Lorem.getWords(2), Lorem.getWords(2), Lorem.getStateAbbr(), Lorem.getZipCode(), Lorem.getWords(1))));
-        OrderLine orderLine1 = new OrderLine(random.nextInt(), new CD(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock")));
+        OrderLine orderLine1 = new OrderLine(random.nextInt(), new CD(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock")));
 
         // Add one order line
         purchaseOrder.addOrderLine(orderLine1);
@@ -50,7 +50,7 @@ public class PurchaseOrderTest {
     @Test
     public void shouldAddTheSameOrderLineSeveralTimesAndChangeIt_Byref() {
         PurchaseOrder purchaseOrder = new PurchaseOrder(random.nextLong(), new LocalDate(2015, 1, 1), new Customer(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971,5,29), Lorem.getPhone(), Lorem.getWords(1), new Address(Lorem.getWords(3), Lorem.getWords(2), Lorem.getWords(2), Lorem.getStateAbbr(), Lorem.getZipCode(), Lorem.getWords(1))));
-        OrderLine orderLine1 = new OrderLine(random.nextInt(), new CD(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock")));
+        OrderLine orderLine1 = new OrderLine(random.nextInt(), new CD(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock")));
 
         // Equals and Hashcode
         OrderLine savedOrderLine = orderLine1; // just saves the reference
@@ -63,7 +63,7 @@ public class PurchaseOrderTest {
         assertEquals(1, purchaseOrder.getOrderLines().size());
 
         // Change the order line and add it
-        orderLine1.setItem(new CD(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("Blue Note"), new Genre("Pop")));
+        orderLine1.setItem(new CD(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("Blue Note"), new Genre("Pop")));
         purchaseOrder.addOrderLine(orderLine1);
         assertEquals(1, purchaseOrder.getOrderLines().size());
 
@@ -76,8 +76,8 @@ public class PurchaseOrderTest {
     @Test
     public void shouldAddTheSameOrderLineSeveralTimesAndChangeIt_Bycopy() {
         PurchaseOrder purchaseOrder = new PurchaseOrder(random.nextLong(), new LocalDate(2015, 1, 1), new Customer(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971,5,29), Lorem.getPhone(), Lorem.getWords(1), new Address(Lorem.getWords(3), Lorem.getWords(2), Lorem.getWords(2), Lorem.getStateAbbr(), Lorem.getZipCode(), Lorem.getWords(1))));
-        OrderLine orderLine1 = new OrderLine(1, new CD("title", 12F, "description", 10F, new MajorLabel("EMI"), new Genre("Rock")));
-        OrderLine orderLine2 = new OrderLine(1, new CD("title", 12F, "description", 10F, new MajorLabel("EMI"), new Genre("Rock")));
+        OrderLine orderLine1 = new OrderLine(1, new CD(Lorem.getWords(1), "title", 12F, "description", 10F, new MajorLabel("EMI"), new Genre("Rock")));
+        OrderLine orderLine2 = new OrderLine(1, new CD(Lorem.getWords(1), "title", 12F, "description", 10F, new MajorLabel("EMI"), new Genre("Rock")));
 
         // Equals and Hashcode
         assertFalse(orderLine1.equals(orderLine2));

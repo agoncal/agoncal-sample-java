@@ -16,8 +16,8 @@ public class InventoryTest {
     @Test
     public void shouldAddDifferentItems() {
         Inventory inventory = new Inventory(12L);
-        Book book1 = new Book(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), Lorem.getWords(1), random.nextInt(), new LocalDate(2014, 12, 4), Language.ENGLISH, new Category("Scifi"), new Author(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getParagraphs(10,100), Language.FRENCH), new Publisher(Lorem.getWords(3)));
-        Book book2 = new Book(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), Lorem.getWords(1), random.nextInt(), new LocalDate(2014, 12, 4), Language.ENGLISH, new Category("Scifi"), new Author(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getParagraphs(10,100), Language.FRENCH), new Publisher(Lorem.getWords(3)));
+        Book book1 = new Book(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextInt(), new LocalDate(2014, 12, 4), Language.ENGLISH, new Category("Scifi"), new Author(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getParagraphs(10,100), Language.FRENCH), new Publisher(Lorem.getWords(3)));
+        Book book2 = new Book(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextInt(), new LocalDate(2014, 12, 4), Language.ENGLISH, new Category("Scifi"), new Author(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getParagraphs(10,100), Language.FRENCH), new Publisher(Lorem.getWords(3)));
 
         // Adds an item to the inventory
         inventory.addItems(book1, 10);
@@ -33,7 +33,7 @@ public class InventoryTest {
     @Test
     public void shouldAddSameItem() {
         Inventory inventory = new Inventory(12L);
-        Book book1 = new Book(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), Lorem.getWords(1), random.nextInt(), new LocalDate(2014, 12, 4), Language.ENGLISH, new Category("Scifi"), new Author(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getParagraphs(10,100), Language.FRENCH), new Publisher(Lorem.getWords(3)));
+        Book book1 = new Book(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextInt(), new LocalDate(2014, 12, 4), Language.ENGLISH, new Category("Scifi"), new Author(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getParagraphs(10,100), Language.FRENCH), new Publisher(Lorem.getWords(3)));
 
         // Adds an item to the inventory
         inventory.addItems(book1, 10);

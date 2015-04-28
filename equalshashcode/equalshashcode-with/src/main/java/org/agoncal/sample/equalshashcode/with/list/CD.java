@@ -26,7 +26,8 @@ public class CD extends Item {
     public CD() {
     }
 
-    public CD(String title, Float price, String description, Float totalDuration, MajorLabel label, Genre genre) {
+    public CD(String isbn, String title, Float price, String description, Float totalDuration, MajorLabel label, Genre genre) {
+        this.isbn = isbn;
         this.title = title;
         this.price = price;
         this.description = description;

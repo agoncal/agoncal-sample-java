@@ -1,5 +1,7 @@
 package org.agoncal.sample.equalshashcode.with;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.joda.time.LocalDate;
 
 public abstract class Person {

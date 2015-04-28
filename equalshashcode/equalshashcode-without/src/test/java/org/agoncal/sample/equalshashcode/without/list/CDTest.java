@@ -16,7 +16,7 @@ public class CDTest {
     @Test
     public void shouldAddDifferentMusicians() {
         Random random = new Random();
-        CD cd = new CD(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock"));
+        CD cd = new CD(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock"));
         Musician musician1 = new Musician(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getParagraphs(100, 500), Lorem.getWords(1));
         Musician musician2 = new Musician(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getParagraphs(100, 500), Lorem.getWords(1));
 
@@ -37,7 +37,7 @@ public class CDTest {
     @Test
     public void shouldAddTheSameMusicianSeveralTimes() {
         Random random = new Random();
-        CD cd = new CD(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock"));
+        CD cd = new CD(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock"));
         Musician musician1 = new Musician(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getParagraphs(100, 500), Lorem.getWords(1));
 
         // Add one musician
@@ -52,7 +52,7 @@ public class CDTest {
     @Test
     public void shouldAddTheSameMusicianSeveralTimesAndChangeIt() {
         Random random = new Random();
-        CD cd = new CD(Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock"));
+        CD cd = new CD(Lorem.getWords(1), Lorem.getTitle(1, 10), random.nextFloat(), Lorem.getParagraphs(10, 50), random.nextFloat(), new MajorLabel("EMI"), new Genre("Rock"));
         Musician musician1 = new Musician(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971, 5, 29), Lorem.getParagraphs(100, 500), Lorem.getWords(1));
 
         // Equals and Hashcode

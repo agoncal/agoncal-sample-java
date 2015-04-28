@@ -8,7 +8,6 @@ public class Book extends Item {
     // =             Attributes             =
     // ======================================
 
-    private String isbn;
     private Integer nbOfPages;
     private LocalDate publicationDate;
     private Language language;
@@ -23,11 +22,11 @@ public class Book extends Item {
     public Book() {
     }
 
-    public Book(String title, Float price, String description, String isbn, Integer nbOfPages, LocalDate publicationDate, Language language, Category category, Author author, Publisher publisher) {
+    public Book(String isbn, String title, Float price, String description, Integer nbOfPages, LocalDate publicationDate, Language language, Category category, Author author, Publisher publisher) {
+        this.isbn = isbn;
         this.title = title;
         this.price = price;
         this.description = description;
-        this.isbn = isbn;
         this.nbOfPages = nbOfPages;
         this.publicationDate = publicationDate;
         this.language = language;
@@ -39,14 +38,6 @@ public class Book extends Item {
     // ======================================
     // =         Getters & setters          =
     // ======================================
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
 
     public Integer getNbOfPages() {
         return nbOfPages;
