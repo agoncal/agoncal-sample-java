@@ -1,6 +1,5 @@
 package org.agoncal.sample.equalshashcode.with;
 
-import com.sun.tools.javac.jvm.Gen;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
