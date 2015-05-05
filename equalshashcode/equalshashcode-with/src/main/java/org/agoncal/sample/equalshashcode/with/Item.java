@@ -1,5 +1,8 @@
 package org.agoncal.sample.equalshashcode.with;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 public abstract class Item {
 
     // ======================================

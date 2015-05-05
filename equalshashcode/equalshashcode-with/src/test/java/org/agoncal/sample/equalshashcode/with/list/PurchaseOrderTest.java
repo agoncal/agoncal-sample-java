@@ -76,13 +76,13 @@ public class PurchaseOrderTest {
     @Test
     public void shouldAddTheSameOrderLineSeveralTimesAndChangeIt_Bycopy() {
         PurchaseOrder purchaseOrder = new PurchaseOrder(random.nextLong(), new LocalDate(2015, 1, 1), new Customer(Lorem.getFirstName(), Lorem.getLastName(), new LocalDate(1971,5,29), Lorem.getPhone(), Lorem.getWords(1), new Address(Lorem.getWords(3), Lorem.getWords(2), Lorem.getWords(2), Lorem.getStateAbbr(), Lorem.getZipCode(), Lorem.getWords(1))));
-        OrderLine orderLine1 = new OrderLine(1, new CD(Lorem.getWords(1), "title", 12F, "description", 10F, new MajorLabel("EMI"), new Genre("Rock")));
-        OrderLine orderLine2 = new OrderLine(1, new CD(Lorem.getWords(1), "title", 12F, "description", 10F, new MajorLabel("EMI"), new Genre("Rock")));
+        OrderLine orderLine1 = new OrderLine(1, new CD("isbn", "title", 12F, "description", 10F, new MajorLabel("EMI"), new Genre("Rock")));
+        OrderLine orderLine2 = new OrderLine(1, new CD("isbn", "title", 12F, "description", 10F, new MajorLabel("EMI"), new Genre("Rock")));
 
         // Equals and Hashcode
-        assertFalse(orderLine1.equals(orderLine2));
-        assertFalse(orderLine2.equals(orderLine1));
-        assertFalse(orderLine1.hashCode() == orderLine2.hashCode());
+        assertTrue(orderLine1.equals(orderLine2));
+        assertTrue(orderLine2.equals(orderLine1));
+        assertTrue(orderLine1.hashCode() == orderLine2.hashCode());
 
         // Add one order line
         purchaseOrder.addOrderLine(orderLine1);
@@ -93,8 +93,8 @@ public class PurchaseOrderTest {
         assertEquals(2, purchaseOrder.getOrderLines().size());
 
         // Equals and Hashcode
-        assertFalse(orderLine1.equals(orderLine2));
-        assertFalse(orderLine2.equals(orderLine1));
-        assertFalse(orderLine1.hashCode() == orderLine2.hashCode());
+        assertTrue(orderLine1.equals(orderLine2));
+        assertTrue(orderLine2.equals(orderLine1));
+        assertTrue(orderLine1.hashCode() == orderLine2.hashCode());
     }
 }

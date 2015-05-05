@@ -4,6 +4,8 @@ import org.agoncal.sample.equalshashcode.with.Genre;
 import org.agoncal.sample.equalshashcode.with.Item;
 import org.agoncal.sample.equalshashcode.with.MajorLabel;
 import org.agoncal.sample.equalshashcode.with.Musician;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,5 +83,27 @@ public class CD extends Item {
 
     public void setMusicians(List<Musician> musicians) {
         this.musicians = musicians;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (!(o instanceof CD)) {
+            return false;
+        }
+
+        CD cd = (CD) o;
+
+        return new EqualsBuilder()
+                .append(isbn, cd.isbn)
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(isbn)
+                .toHashCode();
     }
 }
